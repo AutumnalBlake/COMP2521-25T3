@@ -13,5 +13,6 @@ int main(int argc, char *argv[]) {
 }
 
 int listLength(struct node *head) {
-    return -1;
+    if (head == NULL) return 0;
+    return 1 + listLength(head->next);
 }

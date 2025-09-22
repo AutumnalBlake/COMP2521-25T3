@@ -10,5 +10,9 @@ int main(int argc, char *argv[]) {
 }
 
 void solveHanoi(int n, int from, int to, int other) {
+    if (n == 0) return;
 
+    solveHanoi(n-1, from, other, to);
+    printf("%d -> %d\n", from, to);
+    solveHanoi(n-1, other, to, from);
 }

@@ -14,5 +14,7 @@ int main(int argc, char *argv[]) {
 }
 
 bool listIsSorted(struct node *head) {
-    return false;
+    if (head == NULL) return true;
+    if (head->next == NULL) return true;
+    return head->value < head->next->value && listIsSorted(head->next);
 }
